@@ -296,6 +296,11 @@ android {
         }
     }
     buildTypes {
+        // Test builds install beside the store app instead of replacing it.
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
         release {
             if (releaseStoreFile) {
                 signingConfig signingConfigs.release
